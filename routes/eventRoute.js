@@ -27,7 +27,7 @@ router.get('/page/:page', (req, res) => {
         })
 })
 router.get('/name/:Name', (req, res) => {
-    Event.findOne().where({ Name: req.params.Name }).limit(10)
+    Event.findOne().where({ Name: req.params.Name })
         .exec()
         .then(docs => {
             if (docs.length > 0) {
