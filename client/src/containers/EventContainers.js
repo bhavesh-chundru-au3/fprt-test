@@ -17,7 +17,7 @@ const EventContainer = () => {
     const next = () => {
         setEvents([])
         setPage(page + 1)
-        axios.get(`http://localhost:8000/event/page/${page}`)
+        axios.get(`/event/page/${page}`)
             .then(res => {
                 setEvents([...res.data])
             })
@@ -28,7 +28,7 @@ const EventContainer = () => {
         if (page === 1) { return }
         setEvents([])
         setPage(page - 1)
-        axios.get(`http://localhost:8000/event/page/${page}`)
+        axios.get(`/event/page/${page}`)
             .then(res => {
                 setEvents([...res.data])
             })
